@@ -348,66 +348,15 @@
 
       
         
-          
-            <p>首先，本人非技术码农，完全不懂代码，但是又非常想在茫茫互联网开垦一个属于自己的小天地。</p>
-<p>第一次知道HEXO是在<a href="http://techfusionfm.com" target="_blank" rel="external">科技聚变</a>网站，其实这是一档由两个海外学子所办的同名播客的附属网站，我是因为听这档播客节目才有会看到这个网站，可能是看惯了公众号或者微博、twitter的缘故吧。第一次看到感觉网页很清爽干净，用现在的流行说法，有点佛系韵昧，于是写邮件问了这个网站的后台所用技术，于是就听到了HEXO这个程序；</p>
-<p>第二次看到HEXO是在<a href="http://lixiaolai.com" target="_blank" rel="external">李笑来的网站</a>，原来读李笑来的公众号，觉得是一个写字的人，没想到他其实很懂技术，还会写代码，还写了许多关于写代码的教程，其中有一篇叫“使用Hexo为自己在Github上建一个静态Blog站点”，自己马上产生了兴趣，跟着完成了这个Blog站点的搭建。</p>
-<p>做任何事情开头都是比较难的，有时候就是依葫芦画瓢也很难，因为对于代码的完全陌生，还有对unix命令的无知，通过简单的复制命令，然后按个回车，顺利还好，如果出现“error”字样便手足无措了，于是只能借助google，根据错误信息查询解决方案，一来二去，有些错误试了挺多遍，终于还是得到了解决方案。</p>
-<p>今天写这篇文章的目的就是想通过自己搭建这个Blog站点的尝试经历，结合网上各位大神的经验分享，写一篇教程汇总一下，给和我一样的代码小白，也为了以后自己所需吧。</p>
-<h1 id="注册github，给Blog站点找个窝"><a href="#注册github，给Blog站点找个窝" class="headerlink" title="注册github，给Blog站点找个窝"></a>注册github，给Blog站点找个窝</h1><p>github是最大的代码仓库，据说也是社交性质的网站，好比古代的英雄会，里面各路代码好手云集，当然我们来的目的就是存放我们的Blog站点</p>
-<p>在safari浏览器中打开<code>github.com</code>,注册一个帐号并登录，然后在自己的帐号下面创建一个repo，repo的名字是<code>name123.github.io</code>，当然这个<code>name123</code>是可以自己更改的，你可以自己选择喜欢的名字，创建完成后好像还有一个审核过程，审核通过以后就可以使用了。</p>
-<p><img src="https://cl.ly/3G1B2n2T2z1V/[64b9a819219388738cf758c12588eb20]_%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202018-06-21%2020.12.43.png" alt=""></p>
-<hr>
-<h2 id="给Mac装上必要的软件"><a href="#给Mac装上必要的软件" class="headerlink" title="给Mac装上必要的软件"></a>给Mac装上必要的软件</h2><p>本人使用的Mac，所以这里都是以macOS为基础，不知道windows要如何装，sorry.</p>
-<p>说到要装的这些软件，说实话，也不是很懂每个软件的具体用法，只是照着做吧。</p>
-<h4 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a><strong>安装Homebrew</strong></h4><p>打开Mac的 终端.app,复制以下命令按回车：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure></p>
-<p>完了以后再复制以下命令按回车：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &apos;export PATH=&quot;/usr/local/bin:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile</div></pre></td></tr></table></figure></p>
-<h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a><strong>安装git</strong></h4><p>通过Homebrew来安装git：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install git</div></pre></td></tr></table></figure></p>
-<h4 id="安装rvm和ruby"><a href="#安装rvm和ruby" class="headerlink" title="安装rvm和ruby"></a><strong>安装rvm和ruby</strong></h4><p>安装rvm和ruby2.3.1，以下是三个命令，要分开复制并按回车<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">\curl -sSL https://get.rvm.io | bash -s stable</div><div class="line">rvm install 2.3.1</div><div class="line">rvm use 2.3.1</div></pre></td></tr></table></figure></p>
-<h4 id="安装nvm和node8-11-3"><a href="#安装nvm和node8-11-3" class="headerlink" title="安装nvm和node8.11.3"></a><strong>安装nvm和node8.11.3</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash</div><div class="line">nvm install 8.11.3</div><div class="line">nvm use 8.11.3</div></pre></td></tr></table></figure>
-<p>这里有必要说明一下关于这个nvm的安装，因为当时根据李笑来教程的方法安装（用brew install nvm命令)的时候碰到了一点小麻烦，然后google了一下，发现挺多人碰到用brew安装不对的问题，所以更正了一下正确方法，另外，李笑来写教程的时候安装版本是4.4.5，而现在最新的LTS版本是8.11.3了，其他无异。</p>
-<h4 id="安装ATOM"><a href="#安装ATOM" class="headerlink" title="安装ATOM"></a><strong>安装ATOM</strong></h4><p>Atom是一个编辑器，反正我们也是新手，就选ATOM吧，其他有好的，以后用着用着就会发现的。<br>ATOM可以通过 <a href="https://www.atom.io" target="_blank" rel="external">https://www.atom.io</a> 网站下载安装，也可以通过以下命令安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install atom</div></pre></td></tr></table></figure></p>
-<p>这个ATOM是用来编辑你的博客的，用最常流行的Markdown语法，尽情书写你的文章吧。</p>
-<h4 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a><strong>安装HEXO</strong></h4><p>在终端里依次键入以下的命令轻松安装Hexo及必要组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g</div><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure></p>
-<p>至此，软件安装部分工作算是做完了。</p>
-<h2 id="把网站部署到github，让google可以查到你的网站"><a href="#把网站部署到github，让google可以查到你的网站" class="headerlink" title="把网站部署到github，让google可以查到你的网站"></a>把网站部署到github，让google可以查到你的网站</h2><h4 id="本地工作"><a href="#本地工作" class="headerlink" title="本地工作"></a><strong>本地工作</strong></h4><p>先创建本地工作目录，用以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">git clone https://github.com/name123/name123.github.io.git</div><div class="line">            把上面的name123换成你自己的名字就行了</div></pre></td></tr></table></figure></p>
-<p>然后这样，本地目录就建好了，接下来用以下命令初始化你的本地目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init name123.github.io</div><div class="line">cd name123.github.io</div><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>完成以后，你的本地工作目录里其实已经搭建完成了，并且可以通过以下命令让网站试运行一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo server</div></pre></td></tr></table></figure></p>
-<p>然后打开浏览器输入：localhost:4000 ,就可以看到本地的网站了，激动吧。更激动的在下面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">atom .</div></pre></td></tr></table></figure></p>
-<p>ATOM会打开name123.github.io这个本地文件夹，在左侧面板中，选择<code>_config.yml</code>这个文件，找到 <code>deploy</code> 部分，把里面<code>name123</code>部分换成你自己的名字就可以了。</p>
-<p><img src="https://cl.ly/2g2T2e1B1V42/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202018-06-22%2008.38.56.png" alt=""></p>
-<p><img src="https://cl.ly/1L2E1w0o2i1a/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202018-06-22%2008.39.08.png" alt=""></p>
-<p>接着通过以下命令，就可以把本地网站部署到github上了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
-<p>ok,打开浏览器，输入网址<code>name123.github.io</code>,怎么样，网站看到了吗？什么？没有？多刷新几遍，github站处理可能需要点时间。<br>属于你自己的个人网站就这么搭建完成了。</p>
-<p>下面我们说一下以后要用到的几个常用命令:</p>
-<blockquote>
-<p><code>hexo new &quot;新文章&quot;</code> #创建一篇新文章，引号里的名字随你喜欢，成功以后可以在本地文件夹 <code>name123.github.io/source/_posts</code> 里找到一个名为 <code>新文章.md</code> 的文件，用atom编辑就行了。</p>
-<p><code>hexo generate</code> #这是生成新网页的命令，每当编辑完或者修改完以后发布之前先用这个命令编译一下。</p>
-<p><code>hexo server</code> #这是本地服务命令，运行这个命令后，在浏览器里输入<code>localhost:4000</code>可以查看自己本地的网页效果</p>
-<p><code>hexo deploy</code> #这是发布命令，使用这个命令就可以把刚才编译完以后的新文件发布到github了。</p>
-</blockquote>
-<h2 id="注册个性域名，让google能够搜到"><a href="#注册个性域名，让google能够搜到" class="headerlink" title="注册个性域名，让google能够搜到"></a>注册个性域名，让google能够搜到</h2><h4 id="注册域名及更改DNS"><a href="#注册域名及更改DNS" class="headerlink" title="注册域名及更改DNS"></a><strong>注册域名及更改DNS</strong></h4><p>通过以上的教程应该已经建成了一个域名为<code>name123.github.io</code>的网站了，接下来我们经他来绑定一个个性域名，</p>
-<blockquote>
-<p>什么是个性域名，比如<code>google.com</code>，<code>chaluodao.com</code>这样的</p>
-</blockquote>
-<p>现在可以注册域名的地方很多，什么阿里云呀，腾讯云啊，这里不多说了，注册以后给域名的DNS设置里加以下参数：<br><img src="https://cl.ly/1j3s442r321Y/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202018-06-22%2009.16.56.png" alt=""><br>对了，国内注册域名可能有需要备案等手续，大家自行根据网站要求进行。</p>
-<p>接一下，到<code>name123.github.io</code>文件夹，找到<code>_config.yml</code>文件，用atom打开，找到以下位置，把原来的<code>name123.github.io</code>改成你自己注册的个性域名，比如我的是<code>http://www.chaluodao.com</code>。<br><img src="https://cl.ly/0D0k3Z1c3O1C/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202018-06-22%2009.21.44.png" alt=""></p>
-<p>然后通过atom新建一个文件名叫<code>CNAME</code>的文件,对名字就这几个字，不需要扩展名，然后里面也只要输入你自己申请的那个域名，比如我的这个就是 <code>chaluodao.com</code>,然后保存好，放到<code>name123.github.io/source</code>文件夹下面，接下来就是部署和发布了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 hexo generate</div><div class="line">2 hexo deploy</div></pre></td></tr></table></figure></p>
-<p>然后等上一些时间，你就可以通过自己的域名访问你的网站了。</p>
-<h4 id="制作sitemap"><a href="#制作sitemap" class="headerlink" title="制作sitemap"></a><strong>制作sitemap</strong></h4><p>这样网站建立以后，其实只有自己知道，如果要让网络上高爆光，还需要最后一步，就是做SEO，也就是让google收录我们的网站，可以让网站被搜到，从而达到被访问的效果。<br>先制作站点地图<code>sitemap.xml</code>,还是在终端里输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-sitemap --save</div></pre></td></tr></table></figure>
-<p>然后继续修改那个<code>_config.yml</code>文件，里面加入如下图这些代码：<br><img src="https://cl.ly/3j351l3R0s05/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202018-06-22%2010.48.47.png" alt=""></p>
-<p>接着就是生成和部署：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 hexo generate</div><div class="line">2 hexo deploy</div></pre></td></tr></table></figure></p>
-<p>这样就能在<code>name123.github.io/public</code>目录里看到<code>sitemap.xml</code>这个文件,说明站点地图制作完成。</p>
-<h4 id="提交站点地图给google"><a href="#提交站点地图给google" class="headerlink" title="提交站点地图给google"></a><strong>提交站点地图给google</strong></h4><p>接下来要把站点地图文件<code>sitemap.xml</code>提交到google网站，浏览器里打开<a href="https://www.google.com/webmasters" target="_blank" rel="external">https://www.google.com/webmasters</a>,在里面提交自己的网站，并上传刚才制作完成的那个<code>sitemap.xml</code>文件,完成以后，不出意外第二天就可以通过google来查询你的网站了。</p>
-<p><img src="https://cl.ly/3z0I1i05381r/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202018-06-22%2010.57.40.png" alt=""></p>
-<p><img src="https://cl.ly/1h3e3K0F1i1V/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202018-06-22%2010.58.25.png" alt=""></p>
-<p>在google，可以这样查询你的网站是不是被收录,成功收录是这样的：<br><img src="https://cl.ly/040h291B1v1j/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202018-06-22%2011.04.29.png" alt=""></p>
-<p>没成功是这样的：<br><img src="https://cl.ly/3n3B2M1n1H1u/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202018-06-22%2011.04.52.png" alt=""></p>
-<p>如果没成功的话，也可以直接点下面给出的站长管理链接直接进行站长站点，提交你的网站。</p>
-<p>大功告成，希望都能顺利建成自己的Blog，通过Blog和大家学习分享</p>
-
-          
+          <p>首先，本人非技术码农，完全不懂代码，但是又非常想在茫茫互联网开垦一个属于自己的小天地。</p>
+<p>第一次知道HEXO是在<a href="http://techfusionfm.com" target="_blank" rel="external">科技聚变</a>网站，其实这是一档由两个海外学子所办的同名播客的附属网站，我是因为听这档播客节目才有会看到这个网站，可能是看惯了公众号或者微博、twitter的缘故吧。第一次看到感觉网页很清爽干净，用现在的流行说法，有点佛系韵昧，于是写邮件问了这个网站的后台所用技术，于是就听到了HEXO这个程序；<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/21/用hexo在github建立自己的blog/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
