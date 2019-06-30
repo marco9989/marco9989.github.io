@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="茶罗岛">
 <meta property="og:description" content="其实不懂代码用电脑真的很难 这不，自从2015年我把我的电脑全都换成Mac的时候开始一直在用一个叫鼠须管的输入法，当时装的时候版本号0.9.26，那时不知怎么的部署的是五笔拼音的输入法，可能因为原来在win的时候也是用的这种输入法，然后就感觉方便，基本上是五笔居多，然后拼音为辅，打打难拆字之类的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-30T10:52:28.214Z">
+<meta property="og:updated_time" content="2019-06-30T10:56:26.340Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="鼠须管0.14.0部署五笔拼音方法">
 <meta name="twitter:description" content="其实不懂代码用电脑真的很难 这不，自从2015年我把我的电脑全都换成Mac的时候开始一直在用一个叫鼠须管的输入法，当时装的时候版本号0.9.26，那时不知怎么的部署的是五笔拼音的输入法，可能因为原来在win的时候也是用的这种输入法，然后就感觉方便，基本上是五笔居多，然后拼音为辅，打打难拆字之类的。">
@@ -352,9 +352,9 @@
         <p>其实不懂代码用电脑真的很难</p>
 <p>这不，自从2015年我把我的电脑全都换成Mac的时候开始一直在用一个叫鼠须管的输入法，当时装的时候版本号0.9.26，那时不知怎么的部署的是五笔拼音的输入法，可能因为原来在win的时候也是用的这种输入法，然后就感觉方便，基本上是五笔居多，然后拼音为辅，打打难拆字之类的。<br><a id="more"></a><br>去年年底的时候，不知怎的，突然显示鼠须管更新了，于是就点了更新，但是更新以后发现熟悉的输入法用不了了，年底又忙，甚是慌乱，于是又通过TimeMachine回滚到前一个备份，然后就一直忽略更新提醒一直到现在。</p>
 <p>这些天有些空，想想上次是不是有什么错误操作，使得更新以后不能用，想把这个问题解决<br>然后网上查了一下，发现并不是我一人有这种情况，其他人也有，但是可能其他人就忽略了，或者更换了其他输入法，没有很好的解决这个问题。<br>于是我这一根筋的折腾了一下午，通过网络的资源和自己一点领悟，终于搞定了新版鼠须管部署五笔拼音的方法。</p>
-<h4 id="1-删掉老版："><a href="#1-删掉老版：" class="headerlink" title="1.删掉老版："></a>1.删掉老版：</h4><p>退出并重新登录macOS帐号，打开Finder并按下 command+shift+g键进入‘/Library/Input Methods’,删掉里面的鼠须管程序“Squirrel.app”，再同样进入~/library,删掉里面的rime文件夹。</p>
-<h4 id="2，安装新版，"><a href="#2，安装新版，" class="headerlink" title="2，安装新版，"></a>2，安装新版，</h4><p>到官网下载最新版鼠须管安装程序，现在的最新版是0.14.0（估计作者近半年空，更新了好多版，谢谢作者）。</p>
-<h4 id="3，部署五笔拼音输入法"><a href="#3，部署五笔拼音输入法" class="headerlink" title="3，部署五笔拼音输入法"></a>3，部署五笔拼音输入法</h4><p>再次进入~/library/rime文件夹，把<a href="https://www.dropbox.com/s/e3evmk9yg280rt0/wubi_pinyin.zip?dl=0" target="_blank"><strong>这个文件</strong></a>解压后放到~/library/rime里面，然后切换系统输入法到鼠须管，点一下重新部署，部署完成以后，在可输入的的地方打开输入法，按下F4或者“CTRL+~”，然后就会看到有五笔拼音输入法了，搞定。</p>
+<h4 id="删掉老版："><a href="#删掉老版：" class="headerlink" title="删掉老版："></a>删掉老版：</h4><p>退出并重新登录macOS帐号，打开Finder并按下 command+shift+g 键进入”/Library/Input Methods”, 删掉里面的鼠须管程序 “Squirrel.app”，再同样进入”~/library”, 删掉里面的rime文件夹。</p>
+<h4 id="安装新版，"><a href="#安装新版，" class="headerlink" title="安装新版，"></a>安装新版，</h4><p>到官网下载最新版鼠须管安装程序，现在的最新版是0.14.0（估计作者近半年空，更新了好多版，谢谢作者）。</p>
+<h4 id="部署五笔拼音输入法"><a href="#部署五笔拼音输入法" class="headerlink" title="部署五笔拼音输入法"></a>部署五笔拼音输入法</h4><p>再次进入”~/library/rime”文件夹，把<a href="https://www.dropbox.com/s/e3evmk9yg280rt0/wubi_pinyin.zip?dl=0" target="_blank"><strong>这个文件</strong></a>解压后放到”~/library/rime”里面，然后切换系统输入法到鼠须管，点一下重新部署，部署完成以后，在可输入的的地方打开输入法，按下F4或者”CTRL+~”，然后就会看到有五笔拼音输入法了，搞定。</p>
 
       
     </div>
@@ -534,7 +534,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-删掉老版："><span class="nav-number">1.</span> <span class="nav-text">1.删掉老版：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2，安装新版，"><span class="nav-number">2.</span> <span class="nav-text">2，安装新版，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3，部署五笔拼音输入法"><span class="nav-number">3.</span> <span class="nav-text">3，部署五笔拼音输入法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#删掉老版："><span class="nav-number">1.</span> <span class="nav-text">删掉老版：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装新版，"><span class="nav-number">2.</span> <span class="nav-text">安装新版，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署五笔拼音输入法"><span class="nav-number">3.</span> <span class="nav-text">部署五笔拼音输入法</span></a></li></ol></div>
             
 
           </div>
